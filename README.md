@@ -51,5 +51,4 @@ vivado/             Reproducible project-generation entry point
 6. Implement with a real 125 MHz clock constraint and archive timing/resource reports.
 7. Validate the hardware with ILA and an Analog Discovery instrument.
 
-Generated Vivado projects and build products are intentionally excluded from version control. Source files, project-generation scripts, constraints, tests, and selected reports will be tracked.
 
