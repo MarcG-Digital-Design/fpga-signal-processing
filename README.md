@@ -1,6 +1,6 @@
 # FPGA FIR Low-Pass Filter for Zybo Z7-10
 
-A verified FPGA signal-processing chain for the Digilent Zybo Z7-10. From a composite input `50 Hz + 500 Hz`, the FIR low-pass filter keeps the 50 Hz sinusoid and removes the 500 Hz one.
+A verified FPGA signal-processing chain for the Digilent Zybo board. From a composite input `50 Hz + 500 Hz`, the FIR low-pass filter keeps the 50 Hz sinusoid and removes the 500 Hz one.
 
 ![General schematic](docs/img/general_schematic.png)
 
