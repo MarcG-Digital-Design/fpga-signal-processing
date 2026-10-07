@@ -31,7 +31,7 @@ This order matches the V-cycle described below: design first, then verification,
 | Item | Target |
 | --- | --- |
 | FPGA board | Digilent Zybo Z7-10 |
-| FPGA device | AMD/Xilinx XC7Z010 |
+| FPGA device | AMD/Xilinx XC7Z010-1CLG400C |
 | Fabric clock | 125 MHz (8 ns period) |
 | ADC module | Digilent Pmod AD5, AD7193, 24-bit sigma-delta ADC |
 | DAC module | Digilent Pmod DA3, AD5541A, 16-bit DAC |
