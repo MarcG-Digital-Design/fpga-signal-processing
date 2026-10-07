@@ -10,7 +10,7 @@
         <mxCell id="c3" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#9DD3F0;strokeColor=#5B7F99;strokeWidth=1.5;fontSize=15;fontColor=#1A1A1A;" value="&lt;b&gt;Pmod AD5&lt;br&gt;A/D – 24 bits&lt;/b&gt;&lt;br&gt;AD7193" vertex="1">
           <mxGeometry height="90" width="180" x="30" y="95" as="geometry" />
         </mxCell>
-        <mxCell id="c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#333333;strokeWidth=1.5;fontSize=17;fontStyle=1;fontColor=#1A1A1A;" value="FPGA – Filter" vertex="1">
+        <mxCell id="c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#333333;strokeWidth=1.5;fontSize=17;fontStyle=1;fontColor=#1A1A1A;" value="FPGA :&amp;nbsp;&lt;div&gt;Low Pass Filter&lt;/div&gt;" vertex="1">
           <mxGeometry height="90" width="160" x="330" y="95" as="geometry" />
         </mxCell>
         <mxCell id="c5" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#9DD3F0;strokeColor=#5B7F99;strokeWidth=1.5;fontSize=15;fontColor=#1A1A1A;" value="&lt;b&gt;Pmod DA3&lt;br&gt;D/A – 16 bits&lt;/b&gt;&lt;br&gt;AD5541A" vertex="1">
