@@ -6,6 +6,26 @@ A verified FPGA signal-processing chain for the Digilent Zybo board. From a comp
 
 The filter is designed and studied in MATLAB, implemented in VHDL, and verified step by step, from simulation to measurements on the real board with an Analog Discovery 3.
 
+## Repository Structure
+
+```text
+matlab/                    Filter study
+rtl/final_design/          VHDL source files of the final design
+rtl/unit_tests_on_board/   Unit tests on the real board
+sim/                       Simulation testbenches
+docs/img/                  Figures used in the READMEs
+```
+
+The repository follows the order of the project:
+
+1. **`matlab/`**: where the filter is designed. Choice of the sampling frequency, FIR design (`fir1`, Hamming window, `fc = 190 Hz`, order 50) and analysis (Bode plot, step response). It also holds the fixed-point study: Q15 quantization of the coefficients, bus widths (input, product, accumulator, output), accumulator sizing from the sum of the coefficients, and output saturation. It produces the coefficients and number formats used by the VHDL.
+2. **`rtl/final_design/`**: all the VHDL source files of the final chain.
+3. **`sim/`**: one testbench per block, run in simulation before going to the hardware.
+4. **`rtl/unit_tests_on_board/`**: each block tested on the real board, one folder per test. Its README lists the tests with a link to each folder.
+
+This order matches the V-cycle described below: design first, then verification, from simulation to the board.
+
+
 ## Target platform
 
 | Item | Target |
@@ -45,16 +65,6 @@ Each level of the design is verified by a matching test.
 Unit tests exist at two levels: in simulation (`sim/`) and on the board in real conditions ([`rtl/unit_tests_on_board/`](rtl/unit_tests_on_board/)). For example, the DAC is tested on the board with `wave_gen → spi_da3 → Pmod DA3`, observed on the oscilloscope.
 
 ![DAC unit test on the board](docs/img/unit_test_da3.png)
-
-## Repository layout
-
-```text
-docs/img/                  Shared figures
-matlab/                    Filter study: design, analysis, fixed-point format
-rtl/final_design/          VHDL source files
-rtl/unit_tests_on_board/   Unit tests run on the real board
-sim/                       Simulation testbenches
-```
 
 ## Skills
 
