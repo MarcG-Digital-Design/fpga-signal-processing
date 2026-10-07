@@ -20,7 +20,7 @@ The repository follows the order of the project:
 
 1. **[`matlab/`](matlab/)**: where the filter is designed. Choice of the sampling frequency, FIR design (`fir1`, Hamming window, `fc = 190 Hz`, order 50) and analysis (Bode plot, step response). It also holds the fixed-point study: Q15 quantization of the coefficients, bus widths (input, product, accumulator, output), accumulator sizing from the sum of the coefficients, and output saturation. It produces the coefficients and number formats used by the VHDL.
 2. **`rtl/final_design/`**: all the VHDL source files of the final chain.
-3. **[`sim/`](sim/)**: one testbench per block, run in simulation before going to the hardware.
+3. **[`sim/`](sim/)**: Block-level testbenches for design verification in simulation, representing the software-verification steps of the V-cycle before moving to hardware testing
 4. **[`rtl/unit_tests_on_board/`](rtl/unit_tests_on_board/)**: each block tested on the real board, one folder per test. Its README lists the tests with a link to each folder.
 
 This order matches the V-cycle described below: design first, then verification, from simulation to the board.
