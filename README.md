@@ -56,6 +56,6 @@ rtl/unit_tests_on_board/   Unit tests run on the real board
 sim/                       Simulation testbenches
 ```
 
-## Author
+## Skills
 
-Marc Gruchet, digital design and FPGA. [GitHub profile](https://github.com/MarcG-Digital-Design)
+`VHDL` · `RTL Design` · `FIR Filter Design` · `Fixed-Point Arithmetic` · `FSM Design` · `SPI Interface` · **Static Timing Analysis (WNS / TNS)** · **Hardware Debug / Logic Analyzer** · `Testbench / Simulation` · `Xilinx Vivado` · `MATLAB`
