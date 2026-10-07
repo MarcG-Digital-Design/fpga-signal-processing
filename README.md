@@ -4,7 +4,7 @@ A verified FPGA signal-processing chain for the Digilent Zybo board. From a comp
 
 ![General schematic](docs/img/general_schematic.png)
 
-The filter is designed and studied in MATLAB, implemented in VHDL, and verified step by step, from simulation to measurements on the real board with an Analog Discovery 3.
+The filter is designed and studied in MATLAB, implemented in VHDL with Vivado (simulation, synthesis and implementation), and verified step by step, from simulation to measurements on the real board with an Analog Discovery 3.
 
 ## Repository Structure
 
