@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="test_bench_AD5_FPGA_DA3" id="bench">
-    <mxGraphModel dx="1378" dy="1144" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1550" dy="1288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,11 +16,16 @@
         <mxCell id="c9" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;strokeWidth=2;fontColor=#085041;fontSize=21;fontStyle=1;" value="Pmod DA3&lt;br&gt;&lt;font color=&quot;#C0392B&quot;&gt;D/A&lt;/font&gt; – 16 bits&lt;br&gt;&lt;font style=&quot;font-weight: normal;&quot;&gt;AD5541A&lt;/font&gt;" vertex="1">
           <mxGeometry height="110" width="240" x="1060" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="c11" edge="1" parent="1" source="c7" style="endArrow=block;endFill=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#222222;strokeWidth=2;fontSize=18;fontColor=#222222;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c8" value="SPI (24-bit data)">
+        <mxCell id="c11" edge="1" parent="1" source="c7" style="endArrow=block;endFill=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#222222;strokeWidth=7;fontSize=18;fontColor=#222222;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c8" value="SPI (24-bit data)">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c12" edge="1" parent="1" source="c8" style="endArrow=block;endFill=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#222222;strokeWidth=2;fontSize=18;fontColor=#222222;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c9" value="SPI-like (16-bit data)">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="c12" edge="1" parent="1" source="c8" style="endArrow=block;endFill=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#222222;strokeWidth=7;fontSize=18;fontColor=#222222;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c9" value="SPI-like (16-bit data)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="325" />
+              <mxPoint x="880" y="325" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="xcjLrPjmiYgUT3w98680-1" edge="1" parent="1" style="html=1;rounded=0;endArrow=block;endFill=1;strokeColor=#E81E1E;strokeWidth=2;fontSize=21;" value="">
           <mxGeometry relative="1" as="geometry">
