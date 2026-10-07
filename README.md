@@ -2,9 +2,7 @@
 
 A verified FPGA signal-processing chain for the Digilent Zybo Z7-10. From a composite input `50 Hz + 500 Hz`, the FIR low-pass filter keeps the 50 Hz sinusoid and removes the 500 Hz one.
 
-```text
-analog input -> Pmod AD5 -> FPGA FIR filter -> Pmod DA3 -> analog output
-```
+![General schematic](docs/img/General-schematic.png)
 
 The filter is designed and studied in MATLAB, implemented in VHDL, and verified step by step, from simulation to measurements on the real board with an Analog Discovery 3.
 
