@@ -12,7 +12,7 @@ The input is the sum of two sinusoids, each with amplitude 0.5 so that the sum s
 <p align="center">
   <img src="Img/input_composite_signal.png"
        alt="Composite input signal"
-       width="700">
+       width="650">
 </p>
 
 The sampling frequency is **`Fs = 4800 Hz`**, the maximum output rate of the AD7193 (Pmod AD5). The filter is designed at the same `Fs` as the real hardware: a digital filter only sees the ratio `f / Fs`, so a design done at a different `Fs` would shift the whole frequency response. The highest frequency of interest, 500 Hz, is far below `Fs/2 = 2400 Hz`, so the Nyquist–Shannon criterion is respected with margin.
