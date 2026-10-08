@@ -9,8 +9,11 @@ This folder holds the design and the fixed-point study of the FIR low-pass filte
 The input is the sum of two sinusoids, each with amplitude 0.5 so that the sum stays within ±1 (full scale in Q15):
 
 `x(t) = 0.5·sin(2π·50·t) + 0.5·sin(2π·500·t)`
-
-![Composite input signal](img/input_composite_signal.png)
+<p align="center">
+  <img src="Img/input_composite_signal.png"
+       alt="Composite input signal"
+       width="600">
+</p>
 
 The sampling frequency is **`Fs = 4800 Hz`**, the maximum output rate of the AD7193 (Pmod AD5). The filter is designed at the same `Fs` as the real hardware: a digital filter only sees the ratio `f / Fs`, so a design done at a different `Fs` would shift the whole frequency response. The highest frequency of interest, 500 Hz, is far below `Fs/2 = 2400 Hz`, so the Nyquist–Shannon criterion is respected with margin.
 
