@@ -61,17 +61,30 @@ The stopband is sized on the **worst case over the whole band**, never on a sing
 
 ### Frequency response
 
-![Bode plot](img/bode_fir_fc190_n50.png)
+![Bode plot](Img/bode_fir_fc190_n50.png)
+
 
 The 50 Hz component is kept almost untouched and the 500 Hz component is strongly attenuated. The phase is linear in the passband, which is the expected behavior of a symmetric FIR.
 
 ### Impulse response and delay
 
-The impulse response of an FIR filter is its coefficients. It is symmetric, which explains the linear phase and a constant delay of **25 samples (5.2 ms at 4800 Hz)**. All poles sit at the origin, so the filter is unconditionally stable.
+The impulse response of an FIR filter is its coefficients. It is symmetric, which explains the linear phase and a constant delay of **25 samples (5.2 ms at 4800 Hz)**.
+
+### Poles and zeros
+
+The transfer function of the filter is `H(z) = (b₀·z⁵⁰ + b₁·z⁴⁹ + … + b₅₀) / z⁵⁰`.
+
+![Pole-zero plot](Img/pole_zero.png)
+
+- **Poles:** the denominator is `z⁵⁰`, so all 50 poles sit at the origin, well inside the unit circle. The filter is therefore stable for any coefficient values, including after rounding to Q15. This is the absence of feedback seen in the z-plane.
+- **Zeros:** they carry the whole frequency response. A zero on the unit circle at angle θ cancels the frequency `f = θ / 2π × Fs`, which creates a notch. The dips in the stopband of the Bode plot come from these zeros.
+- **Reciprocal pairs:** zeros off the circle come in pairs `r·e^(jθ)` and `(1/r)·e^(jθ)`, with their conjugates. This symmetry is the z-plane signature of symmetric coefficients, hence of linear phase.
+
+Rounding the coefficients to Q15 moves the zeros slightly, which explains the 0.4 dB lost in the stopband, but it cannot move the poles: stability is not affected.
 
 ### Step response
 
-![Step response](img/step_response.png)
+![Step response](Img/step_response.png)
 
 The output settles to ±5 % after about 33 samples and to ±1 % after about 45. It is exact after 51 samples. The overshoot is about 3 % (Gibbs effect).
 
@@ -79,7 +92,7 @@ The output settles to ±5 % after about 33 samples and to ±1 % after about 45. 
 
 The filtered signal is the 50 Hz sinusoid. It is delayed by the filter but not distorted:
 
-![Filtered signal against pure 50 Hz](img/filtered_vs_pure_50hz.png)
+![Filtered signal against pure 50 Hz](Img/filtered_vs_pure_50hz.png)
 
 ## 6. Fixed-point study
 
@@ -87,7 +100,7 @@ The filtered signal is the 50 Hz sinusoid. It is delayed by the filter but not d
 
 The coefficients are rounded to 16 bits in Q15 (`round(b · 2^15)`) and the filter is applied again with the quantized values. The Q15 output overlaps the floating-point output:
 
-![Q15 against floating point](img/q15_vs_float_comparison.png)
+![Q15 against floating point](Img/q15_vs_float_comparison.png)
 
 | | Worst-case stopband attenuation |
 | --- | --- |
