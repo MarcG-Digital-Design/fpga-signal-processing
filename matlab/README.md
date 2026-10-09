@@ -76,11 +76,9 @@ The transfer function of the filter is `H(z) = (b₀·z⁵⁰ + b₁·z⁴⁹ + 
 
 ![Pole-zero plot](Img/pole_zero.png)
 
-- **Poles:** the denominator is `z⁵⁰`, so all 50 poles sit at the origin, well inside the unit circle. The filter is therefore stable for any coefficient values, including after rounding to Q15. This is the absence of feedback seen in the z-plane.
-- **Zeros:** they carry the whole frequency response. A zero on the unit circle at angle θ cancels the frequency `f = θ / 2π × Fs`, which creates a notch. The dips in the stopband of the Bode plot come from these zeros.
-- **Reciprocal pairs:** zeros off the circle come in pairs `r·e^(jθ)` and `(1/r)·e^(jθ)`, with their conjugates. This symmetry is the z-plane signature of symmetric coefficients, hence of linear phase.
+All 50 poles sit at the origin, well inside the unit circle, so the filter is stable for any coefficient values, including after rounding to Q15. The zeros, mostly on the unit circle, create the notches of the stopband seen on the Bode plot.
 
-Rounding the coefficients to Q15 moves the zeros slightly, which explains the 0.4 dB lost in the stopband, but it cannot move the poles: stability is not affected.
+This plot is of limited use for a FIR filter: a FIR has no feedback, so its poles are always at the origin and its stability is guaranteed by construction. It is included to confirm this stability and to show where the notches of the Bode plot come from. The specification itself is verified on the Bode plot.
 
 ### Step response
 
