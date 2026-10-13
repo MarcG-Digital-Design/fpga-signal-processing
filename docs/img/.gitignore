@@ -1,0 +1,18 @@
+# Keep only images and diagram sources in this folder.
+# draw.io leaves backup/temporary files (*.bkp, *.dtmp) when saving: they stay out of Git.
+
+# Ignore everything...
+*
+
+# ...except subfolders and this file
+!*/
+!.gitignore
+
+# ...and except images, PDFs and draw.io sources
+!*.png
+!*.jpg
+!*.jpeg
+!*.gif
+!*.svg
+!*.pdf
+!*.drawio
