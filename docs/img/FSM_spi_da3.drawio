@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="FSM_spi_da3" id="fsmda3">
-    <mxGraphModel dx="1192" dy="990" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="760" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
+    <mxGraphModel dx="1464" dy="921" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="760" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#333333;strokeWidth=2;fontSize=12;fontColor=#1A1A1A;" value="&lt;b style=&#39;font-size:15px&#39;&gt;TRANSMISSION&lt;/b&gt;&lt;hr size=&#39;1&#39; style=&#39;border-color:#333333&#39;&gt;CS = 0&lt;br&gt;SCLK toggles every 125 cycles&lt;br&gt;(500 kHz)&lt;br&gt;DIN = current bit, MSB first,&lt;br&gt;updated on SCLK falling edge" vertex="1">
           <mxGeometry height="240" width="240" x="540" y="170" as="geometry" />
         </mxCell>
-        <mxCell id="c5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#333333;strokeWidth=2;fontSize=12;fontColor=#1A1A1A;" value="&lt;b style=&#39;font-size:15px&#39;&gt;FIN&lt;/b&gt;&lt;hr size=&#39;1&#39; style=&#39;border-color:#333333&#39;&gt;CS = 1&lt;br&gt;SCLK = 0&lt;br&gt;DIN = 0" vertex="1">
+        <mxCell id="c5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#333333;strokeWidth=2;fontSize=12;fontColor=#1A1A1A;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;END_TRANSMISSION&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;hr size=&quot;1&quot; style=&quot;border-color: rgb(51, 51, 51);&quot;&gt;CS = 1&lt;br&gt;SCLK = 0&lt;br&gt;DIN = 0" vertex="1">
           <mxGeometry height="200" width="200" x="1000" y="190" as="geometry" />
         </mxCell>
         <mxCell id="c6" parent="1" style="ellipse;html=1;fillColor=#333333;strokeColor=#333333;" value="" vertex="1">
