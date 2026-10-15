@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="unit_test_wave_gen_DA3" id="utwg">
-    <mxGraphModel dx="1348" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="640" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="873" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="640" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -87,7 +87,7 @@
             <mxPoint x="670" y="375" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c21" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#333333;" value="signal_filtered(15:0)" vertex="1">
+        <mxCell id="c21" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#333333;" value="signal_square(15:0)" vertex="1">
           <mxGeometry height="16" width="180" x="470" y="381" as="geometry" />
         </mxCell>
         <mxCell id="c22" edge="1" parent="1" style="html=1;rounded=0;endArrow=classic;endFill=1;endSize=5;strokeColor=#666666;strokeWidth=1;" value="">

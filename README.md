@@ -62,9 +62,9 @@ Each level of the design is verified by a matching test.
 | Detailed design of each block (SPI state machines, FIR datapath) | Unit tests: a simulation testbench per block, then a test on the real board |
 | VHDL implementation | |
 
-Unit tests exist at two levels: in simulation (`sim/`) and on the board in real conditions ([`rtl/unit_tests_on_board/`](rtl/unit_tests_on_board/)). For example, the DAC is tested on the board with `wave_gen → spi_da3 → Pmod DA3`, observed on the oscilloscope.
+Unit tests exist at two levels: in simulation (`sim/`) and on the board in real conditions ([`rtl/unit_tests_on_board/`](rtl/unit_tests_on_board/)). For example, the DAC is tested on the board with `wave_gen → pmod_da3 → Pmod DA3`, observed on the oscilloscope.
 
-![DAC unit test on the board](docs/img/unit_test_da3.png)
+![DAC unit test on the board](docs/img/DA3_unit_test_wave_gen.png)
 
 ## Skills
 
