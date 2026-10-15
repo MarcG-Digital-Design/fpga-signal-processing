@@ -1,6 +1,12 @@
 # Simulation
 
-The design is verified block by block, starting with the DAC driver `pmod_da3`. Each block is simulated on its own with a dedicated testbench, then tested on the board, before being integrated into the full chain. This is the unit-test level of the V-cycle described in the [main README](../README.md).
+The design is verified block by block. Every block of the final architecture is simulated on its own, then tested in real conditions on the board, before the final design is implemented. This is the unit-test level of the V-cycle described in the [main README](../README.md).
+
+The blocks circled in red in the diagram below are the ones covered in this folder.
+
+![Detailed architecture](../docs/img/detailed_architecture.png)
+
+The tests start with the DAC driver `pmod_da3`.
 
 | File | Role |
 | --- | --- |
