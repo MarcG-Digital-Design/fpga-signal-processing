@@ -1,14 +1,14 @@
 <mxfile host="Electron">
   <diagram name="unit_test_wave_gen_DA3" id="utwg">
-    <mxGraphModel dx="873" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="640" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1348" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="640" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="bg_white" parent="1" style="rounded=0;html=1;fillColor=#FFFFFF;strokeColor=none;movable=0;resizable=0;deletable=0;editable=0;connectable=0;" value="" vertex="1">
           <mxGeometry height="640" width="1320" as="geometry" />
         </mxCell>
-        <mxCell id="c2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=0;fontColor=#1A1A1A;" value="On-board unit test – wave_gen?vhd → pmod_da3.vhd → Pmod DA3" vertex="1">
-          <mxGeometry height="34" width="900" x="40" y="30" as="geometry" />
+        <mxCell id="c2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=0;fontColor=#1A1A1A;" value="On-board unit test: &lt;code&gt;wave_gen.vhd&lt;/code&gt; generates a square wave to test &lt;code&gt;pmod_da3.vhd&lt;/code&gt; → Pmod DA3" vertex="1">
+          <mxGeometry height="34" width="1040" x="90" y="40" as="geometry" />
         </mxCell>
         <mxCell id="c3" parent="1" style="rounded=1;arcSize=2;html=1;fillColor=none;strokeColor=#1A1A1A;strokeWidth=3;dashed=1;dashPattern=6 4;" value="" vertex="1">
           <mxGeometry height="440" width="760" x="200" y="150" as="geometry" />
@@ -87,7 +87,7 @@
             <mxPoint x="670" y="375" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c21" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#333333;" value="signal_square(15:0)" vertex="1">
+        <mxCell id="c21" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#333333;" value="square_signal(15:0)" vertex="1">
           <mxGeometry height="16" width="180" x="470" y="381" as="geometry" />
         </mxCell>
         <mxCell id="c22" edge="1" parent="1" style="html=1;rounded=0;endArrow=classic;endFill=1;endSize=5;strokeColor=#666666;strokeWidth=1;" value="">
