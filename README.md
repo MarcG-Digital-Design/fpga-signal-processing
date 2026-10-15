@@ -6,6 +6,24 @@ A verified FPGA signal-processing chain for the Digilent Zybo board. From a comp
 
 The filter is designed and studied in MATLAB, implemented in VHDL with Vivado (simulation, synthesis and implementation), and verified step by step, from simulation to measurements on the real board with an Analog Discovery 3.
 
+## Detailed architecture
+
+The chain is made of three VHDL blocks running on the 125 MHz system clock of the Zybo Z7-10.
+
+<p align="center">
+  <img src="docs/img/Detailed%20architecture_Schematic.png"
+       alt="Detailed architecture"
+       width="900">
+</p>
+
+| Block | Role | Output |
+| --- | --- | --- |
+| `pmod_AD5` | SPI driver of the Pmod AD5 (AD7193, 24-bit ADC, up to 4.8 kHz) | `signal_sample_16`, 16 bits |
+| `FILTER` | FIR low-pass filter designed in [`matlab/`](matlab/) | `signal_filtered`, 16 bits |
+| `pmod_DA3` | SPI driver of the Pmod DA3 (16-bit DAC) | analog output |
+
+Each block is simulated on its own, then tested on the board, before being integrated. See [`sim/`](sim/).
+
 ## Repository Structure
 
 ```text

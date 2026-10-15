@@ -4,7 +4,7 @@ The design is verified block by block. Every block of the final architecture is 
 
 The blocks circled in red in the diagram below are the ones covered in this folder.
 
-![Detailed architecture](../docs/img/detailed_architecture.png)
+![Detailed architecture](../docs/img/Detailed%20architecture_Schematic.png)
 
 The tests start with the DAC driver `pmod_da3`.
 
