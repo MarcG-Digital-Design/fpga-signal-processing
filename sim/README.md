@@ -19,7 +19,7 @@ The tests start with the DAC driver `pmod_da3`.
 
 The test is validated graphically on the waveform, and above all by assertions. The testbench is self-checking: it reports an error as soon as a check fails and prints `*** TEST PASSED ***` only if every check succeeded.
 
-![pmod_da3 simulation](../docs/img/test_bench_pmod2_da3.png)
+![pmod_da3 simulation](../docs/img/DA3_test_bench_pmod.png)
 
 In the red boxes, the word captured on the SPI bus equals the expected word at the end of each frame. The console shows `TEST PASSED`.
 
@@ -31,23 +31,23 @@ Once the simulation passed, the block was tested on the Zybo Z7-10. A test gener
 
 For this test, `wave_gen` produces a square wave that stands in for the filtered signal, so the DAC driver is checked without the FIR filter.
 
-![On-board unit test](../docs/img/unit_test_wave_gen_DA3.png)
+![On-board unit test](../docs/img/DA3_unit_test_wave_gen.png)
 
 First real test on the board: the analog output of the Pmod DA3 goes through its SMA connector to channel 1 of the Analog Discovery 3. A probe on channel 2, with its ground lead connected, is placed on the Pmod header pins one at a time to observe the SPI signals (SCLK, DIN, …).
 
 <p align="center">
-  <img src="../docs/img/real_test_pmod_DA3.jpeg"
+  <img src="../docs/img/DA3_real_test.jpeg"
        alt="Test bench: Zybo Z7-10, Pmod DA3 and Analog Discovery 3"
        width="500">
 </p>
 
 **DA3 output**: a 50 Hz square wave between 0 V and about 2.5 V (49.999 Hz and 50 % duty cycle measured).
 
-![DA3 output on the Analog Discovery 3](../docs/img/da3_square_wave_ad3.png)
+![DA3 output on the Analog Discovery 3](../docs/img/DA3_square_wave.png)
 
 **SCLK**: one burst of 16 clock pulses per sample, one for each data bit. The bursts repeat every sample period (about 208 µs, 4.8 kHz).
 
-![SCLK on the Analog Discovery 3](../docs/img/da3_sclk_ad3.png)
+![SCLK on the Analog Discovery 3](../docs/img/DA3_sclk.png)
 
 **Limit of this test**: a square wave only uses two output values, so it proves the frame, the clock and the two extreme levels, but not the other codes. A sine wave or a ramp would have been a better stimulus: it sweeps all the output codes, and a stuck or swapped data bit would show up as a distortion on the analog output.
 
