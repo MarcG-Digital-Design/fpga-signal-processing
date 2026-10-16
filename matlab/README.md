@@ -98,19 +98,19 @@ The filtered signal is the 50 Hz sinusoid. It is delayed by the filter but not d
 
 The coefficients are rounded to 16 bits in Q1.15 (`round(b · 2^15)`) and the filter is applied again with the quantized values. The Q1.15 output overlaps the floating-point output:
 
-![Q15 against floating point](Img/q15_vs_float_comparison.png)
+![Q1.15 against floating point](Img/q1.15_vs_float_comparison.png)
 
 | | Worst-case stopband attenuation |
 | --- | --- |
 | Floating point | −68.0 dB |
-| Q15 coefficients | −67.6 dB |
+| Q1.15 coefficients | −67.6 dB |
 
-Rounding to Q15 costs only **0.4 dB**, so 16 bits are enough.
+Rounding to Q1.15 costs only **0.4 dB**, so 16 bits are enough.
 
 ### Number formats
 
-- **Q15** (1 sign bit + 15 fractional bits): range −1.0 to +0.99997, LSB = 2⁻¹⁵ ≈ 3.05·10⁻⁵. Used for the input samples, the coefficients and the output.
-- **Q2.30** (1 sign bit + 1 integer bit + 30 fractional bits, 32 bits): range −2.0 to +1.99999, LSB = 2⁻³⁰. Used for the products and the accumulator, since Q15 × Q15 = Q30.
+- **Q1.15** (1 sign bit + 15 fractional bits): range −1.0 to +0.99997, LSB = 2⁻¹⁵ ≈ 3.05·10⁻⁵. Used for the input samples, the coefficients and the output.
+- **Q2.30** (1 sign bit + 1 integer bit + 30 fractional bits, 32 bits): range −2.0 to +1.99999, LSB = 2⁻³⁰. Used for the products and the accumulator, since Q1.15 × Q1.15 = Q30.
 
 | Bit | 31 | 30 | 29 | 28 | 27 | … |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -120,17 +120,17 @@ Rounding to Q15 costs only **0.4 dB**, so 16 bits are enough.
 
 | Element | Format | Width |
 | --- | --- | --- |
-| Input sample | Q15 | 16 bits signed |
-| Coefficient | Q15 | 16 bits signed |
-| Product | Q30 | 32 bits |
+| Input sample | Q1.15 | 16 bits signed |
+| Coefficient | Q1.15 | 16 bits signed |
+| Product | Q2.30 | 32 bits |
 | Accumulator | Q2.30 | 32 bits |
-| Output | Q15 | 16 bits signed |
+| Output | Q1.15 | 16 bits signed |
 
 ### Accumulator width
 
 A first, coarse bound assumes the worst case for every term: a 16-bit × 16-bit product summed 51 times needs `16 + 16 + ceil(log2(51)) = 38 bits`.
 
-Using the real coefficients gives a tighter bound. The worst case is a full-scale input (2¹⁵) multiplied by the sum of the absolute values of the Q15 coefficients:
+Using the real coefficients gives a tighter bound. The worst case is a full-scale input (2¹⁵) multiplied by the sum of the absolute values of the Q1.15 coefficients:
 
 ```matlab
 acc_max  = 2^15 * sum(abs(b_q15));          % = 32768 × 37148 ≈ 1.22·10^9
@@ -142,15 +142,15 @@ acc_bits = floor(log2(acc_max)) + 2         % = 32
 ### Output stage
 
 - The sum is computed in full precision and rounded **once**, at the end, which minimizes quantization noise.
-- The output is `acc(30 downto 15)`: a shift of 15 bits brings Q30 back to Q15.
+- The output is `acc(30 downto 15)`: a shift of 15 bits brings Q30 back to Q1.15.
 - The accumulator cannot overflow, but the **output** can: the peak gain of the filter is 1.13 (sum of the absolute coefficients). This is why the output saturates instead of just raising a flag. If `acc(31) ≠ acc(30)`, the output is forced to `+32767` when bit 31 is 0, and to `−32768` when bit 31 is 1. When the value fits in 16 bits, bits 31 and 30 are identical (sign extension).
 
 ## 7. What goes to the VHDL
 
 | Item | Value |
 | --- | --- |
-| Coefficients | 51 values in Q15, symmetric |
-| Input / output format | Q15, 16 bits signed |
+| Coefficients | 51 values in Q1.15, symmetric |
+| Input / output format | Q1.15, 16 bits signed |
 | Product and accumulator | 32 bits, Q2.30 |
 | Output | `acc(30 downto 15)` with saturation |
 | Expected delay | 25 samples |
