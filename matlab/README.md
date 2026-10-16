@@ -94,9 +94,9 @@ The filtered signal is the 50 Hz sinusoid. It is delayed by the filter but not d
 
 ## 6. Fixed-point study
 
-### Quantization of the coefficients (Q15)
+### Quantization of the coefficients (Q1.15) Q1.15 -> 1 sign bit and 15 bits of fractionnal data
 
-The coefficients are rounded to 16 bits in Q15 (`round(b · 2^15)`) and the filter is applied again with the quantized values. The Q15 output overlaps the floating-point output:
+The coefficients are rounded to 16 bits in Q1.15 (`round(b · 2^15)`) and the filter is applied again with the quantized values. The Q1.15 output overlaps the floating-point output:
 
 ![Q15 against floating point](Img/q15_vs_float_comparison.png)
 

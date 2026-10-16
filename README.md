@@ -20,7 +20,7 @@ The chain is made of three VHDL blocks running on the 125 MHz system clock of th
 | --- | --- | --- |
 | `pmod_AD5` | SPI driver of the Pmod AD5 (AD7193, 24-bit ADC, up to 4.8 kHz) | `signal_sample_16`, 16 bits |
 | `FILTER` | FIR low-pass filter designed in [`matlab/`](matlab/) | `signal_filtered`, 16 bits |
-| `pmod_DA3` | SPI driver of the Pmod DA3 (16-bit DAC) | analog output |
+| `pmod_DA3` | SPI "LIKE" driver of the Pmod DA3 (16-bit DAC) | analog output |
 
 Each block is simulated on its own, then tested on the board, before being integrated. See [`sim/`](sim/).
 
