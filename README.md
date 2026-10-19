@@ -36,7 +36,7 @@ docs/img/                  Figures used in the READMEs
 
 The repository follows the order of the project:
 
-1. **[`matlab/`](matlab/)**: where the filter is designed. Choice of the sampling frequency, FIR design (`fir1`, `fc = 190 Hz`, order 50) and analysis (Bode plot, step response). It also holds the fixed-point study: Q15 quantization of the coefficients, bus widths (input, product, accumulator, output), accumulator sizing from the sum of the coefficients, and output saturation. It produces the coefficients and number formats used by the VHDL.
+1. **[`matlab/`](matlab/)**: where the filter is designed. Choice of the sampling frequency, FIR design (`fir1`, `fc = 190 Hz`, order 50) and analysis (Bode plot, step response). It also holds the fixed-point study: Q1.15 quantization of the coefficients, bus widths (input, product, accumulator, output), accumulator sizing from the sum of the coefficients, and output saturation. It produces the coefficients and number formats used by the VHDL.
 2. **`rtl/final_design/`**: all the VHDL source files of the final chain.
 3. **[`sim/`](sim/)**: Block-level testbenches for design verification in simulation, representing the software-verification steps of the V-cycle before moving to hardware testing
 4. **[`rtl/unit_tests_on_board/`](rtl/unit_tests_on_board/)**: each block tested on the real board, one folder per test. Its README lists the tests with a link to each folder.
@@ -65,7 +65,7 @@ This order matches the V-cycle described below: design first, then verification,
 | Filter | FIR, order 50 (51 coefficients), Hamming window, `fc = 190 Hz` |
 | Passband | 0-50 Hz, loss ≤ 0.2 dB (measured: −0.11 dB) |
 | Stopband | ≥ 450 Hz, attenuation ≥ 60 dB (measured worst case: −68.0 dB) |
-| Number format | Q15 input, coefficients and output; 32-bit Q2.30 accumulator |
+| Number format | Q1.15 input, coefficients and output; 32-bit Q2.30 accumulator |
 
 A FIR filter was chosen over IIR and FFT filtering for its linear phase and unconditional stability. The full study is in [`matlab/`](matlab/).
 

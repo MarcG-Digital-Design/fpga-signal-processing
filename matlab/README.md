@@ -110,7 +110,7 @@ Rounding to Q1.15 costs only **0.4 dB**, so 16 bits are enough.
 ### Number formats
 
 - **Q1.15** (1 sign bit + 15 fractional bits): range −1.0 to +0.99997, LSB = 2⁻¹⁵ ≈ 3.05·10⁻⁵. Used for the input samples, the coefficients and the output.
-- **Q2.30** (1 sign bit + 1 integer bit + 30 fractional bits, 32 bits): range −2.0 to +1.99999, LSB = 2⁻³⁰. Used for the products and the accumulator, since Q1.15 × Q1.15 = Q30.
+- **Q2.30** (1 sign bit + 1 integer bit + 30 fractional bits, 32 bits): range −2.0 to +1.99999, LSB = 2⁻³⁰. Used for the products and the accumulator, since Q1.15 × Q1.15 = Q2.30
 
 | Bit | 31 | 30 | 29 | 28 | 27 | … |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -142,7 +142,7 @@ acc_bits = floor(log2(acc_max)) + 2         % = 32
 ### Output stage
 
 - The sum is computed in full precision and rounded **once**, at the end, which minimizes quantization noise.
-- The output is `acc(30 downto 15)`: a shift of 15 bits brings Q30 back to Q1.15.
+- The output is `acc(30 downto 15)`: a shift of 15 bits brings Q2.30 back to Q1.15.
 - The accumulator cannot overflow, but the **output** can: the peak gain of the filter is 1.13 (sum of the absolute coefficients). This is why the output saturates instead of just raising a flag. If `acc(31) ≠ acc(30)`, the output is forced to `+32767` when bit 31 is 0, and to `−32768` when bit 31 is 1. When the value fits in 16 bits, bits 31 and 30 are identical (sign extension).
 
 ## 7. What goes to the VHDL
